@@ -1,0 +1,1 @@
+The issue is that Tailwind's `@apply` directive doesn't work as expected when used within a `@layer` directive that's applied to a component.  The styles aren't being applied correctly, resulting in the component not being styled as intended.  For example, applying a class containing `@apply` within a component's `@layer` doesn't cascade the styles to the component.
