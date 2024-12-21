@@ -1,0 +1,21 @@
+The problem lies in how Tailwind processes `@layer` directives within components.  The solution often involves moving the `@apply` directive outside the `@layer` or restructuring the CSS to avoid this conflict.  Here's a revised approach:
+
+```css
+/* bugSolution.css */
+
+.my-component {
+  @apply bg-gray-100 p-4 rounded;
+}
+
+/*Alternatively, if you still need layers, apply the styles directly instead of using @apply*/
+
+@layer components {
+  .my-component {
+    background-color: #f5f5f5; /* Directly apply styles here*/
+    padding: 1rem;
+    border-radius: 0.25rem; 
+  }
+}
+```
+
+By applying the styles directly to the component class or by reorganizing your layers and removing reliance on `@apply` within the problematic layer, the intended styling can be achieved.
